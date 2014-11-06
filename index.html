@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="/lib/client/javascript/WebSocket.js"></script>
+		<script src="/lib/client/javascript/jms/JmsClient.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+		<script src="js/client.js"></script>
+
+	</head>
+	<body ng-app="StocksReader">
+		<div ng-controller="StocksController">
+			URL: <input type="text" ng-model="url" style="width:300px;" />
+			<p>
+			Channel: <input type="text" ng-model="channel" style="width:300px;" />
+			<p>
+			<button ng-click="connect()" ng-disabled="connected">Connect</button>
+			<button ng-disabled="!canFetchStocks" ng-click="fetchStocks()">
+				Fetch Stocks
+			</button>
+			<button ng-disabled="!canPause" ng-click="pause()">
+				Pause
+			</button>
+			<ul>
+				<li ng-repeat="(id, stock) in stockList">
+					{{stock.name}} : {{stock.id}} : {{stock.value}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

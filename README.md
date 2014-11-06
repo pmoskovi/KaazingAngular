@@ -12,3 +12,5 @@ Simple sample to show Kaazing integration with angular.js, developed by Prashant
    - <code>$> <GATEWAY_HOME>/bin/demo-services.start</code>
 5. Point your browser to: http://localhost:8001/angular
 6. Click the Connect button, then the Fetch Stocks button.
+
+<img src="kaazing-angular.gif"></img>
